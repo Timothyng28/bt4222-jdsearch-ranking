@@ -1,0 +1,150 @@
+{
+  "version": "1.0",
+  "status": "frozen before step 4: no features added or removed after this point",
+  "model_features": [
+    "u_n_click_w",
+    "u_carts_per_click_w",
+    "u_orders_per_cart_w",
+    "u_n_order_30d",
+    "u_n_order_w",
+    "u_days_since_click",
+    "u_days_since_order",
+    "ui_days_shop_click",
+    "ui_days_shop_cart",
+    "ui_days_shop_order",
+    "ui_days_brand_click",
+    "ui_days_brand_cart",
+    "ui_days_brand_order",
+    "ui_days_cate4_click",
+    "ui_days_cate4_cart",
+    "ui_days_cate4_order",
+    "ui_item_days_click",
+    "ui_item_days_cart",
+    "ui_item_days_order",
+    "ui_item_cart_no_order",
+    "q_seen_before",
+    "ui_item_days_related_query",
+    "ui_cate4_days_related_query",
+    "i_pop_click",
+    "i_pop_cart",
+    "i_pop_order",
+    "i_exposure_n",
+    "i_eng_rate_oof",
+    "i_pur_rate_oof",
+    "i_label_imps_oof",
+    "s_pop_order_pct",
+    "s_pop_click_pct",
+    "s_shop_share",
+    "ui_name_cov_recent",
+    "ui_name_cov_order"
+  ],
+  "groups": {
+    "H1 activity inside its window": [
+      "u_n_click_w",
+      "u_carts_per_click_w",
+      "u_orders_per_cart_w",
+      "u_n_order_30d",
+      "u_n_order_w",
+      "u_days_since_click",
+      "u_days_since_order"
+    ],
+    "H2 where a match comes from": [
+      "ui_days_shop_click",
+      "ui_days_shop_cart",
+      "ui_days_shop_order",
+      "ui_days_brand_click",
+      "ui_days_brand_cart",
+      "ui_days_brand_order",
+      "ui_days_cate4_click",
+      "ui_days_cate4_cart",
+      "ui_days_cate4_order"
+    ],
+    "H3 the item itself": [
+      "ui_item_days_click",
+      "ui_item_days_cart",
+      "ui_item_days_order",
+      "ui_item_cart_no_order"
+    ],
+    "H4 query as a key into history": [
+      "q_seen_before",
+      "ui_item_days_related_query",
+      "ui_cate4_days_related_query"
+    ],
+    "H5 popularity by type": [
+      "i_pop_click",
+      "i_pop_cart",
+      "i_pop_order",
+      "i_exposure_n"
+    ],
+    "H6 item conversion rate": [
+      "i_eng_rate_oof",
+      "i_pur_rate_oof",
+      "i_label_imps_oof"
+    ],
+    "H7 standing within the slate": [
+      "s_pop_order_pct",
+      "s_pop_click_pct",
+      "s_shop_share"
+    ],
+    "H8 name overlap by source": [
+      "ui_name_cov_recent",
+      "ui_name_cov_order"
+    ]
+  },
+  "hypotheses": {
+    "H1 activity inside its window": "Activity describes intent and habit only inside the period each type is recorded",
+    "H2 where a match comes from": "Recent clicks signal intent, carts consideration, orders loyalty; pooled, these mix",
+    "H3 the item itself": "Users return to recently clicked items and buy items left in the cart",
+    "H4 query as a key into history": "Past behaviour under a related search matters more than the rest of the history",
+    "H5 popularity by type": "Recent click popularity and long-run order popularity describe different kinds of appeal",
+    "H6 item conversion rate": "Some items convert better, measurable from other users' outcomes",
+    "H7 standing within the slate": "A re-ranker compares within a slate, so relative standing matters",
+    "H8 name overlap by source": "Name overlap with recent items signals intent; with ordered items, repeats or substitutes"
+  },
+  "interim_baseline": [
+    "int_purchase_share",
+    "int_search_dependence",
+    "int_recency_log",
+    "int_history_length",
+    "int_segment27",
+    "int_shop_match",
+    "int_brand_match",
+    "int_cate4_match",
+    "int_name_sim",
+    "i_exposure_n",
+    "i_eng_rate_oof"
+  ],
+  "comparison": [
+    "int_purchase_share",
+    "int_search_dependence",
+    "int_recency_log",
+    "int_history_length",
+    "int_segment27",
+    "int_shop_match",
+    "int_brand_match",
+    "int_cate4_match",
+    "int_name_sim",
+    "i_exposure_n",
+    "i_eng_rate_oof",
+    "int_order_count",
+    "int_click_share",
+    "int_cart_share",
+    "int_burstiness_log",
+    "i_pop_any"
+  ],
+  "exploratory_variants": {
+    "+ pooled popularity": {
+      "add": [
+        "i_pop_any"
+      ],
+      "note": "Found after looking at section 5 (highest within-slate AUC on training users). Tested on validation in step 4 and reported separately from the main model."
+    }
+  },
+  "history_windows_days": {
+    "CLICK": 7,
+    "CART": 90,
+    "ORD": 365,
+    "FLW": 89
+  },
+  "created": "2026-10-27"
+}

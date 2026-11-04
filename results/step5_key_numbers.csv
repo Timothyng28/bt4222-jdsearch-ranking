@@ -1,0 +1,22 @@
+finding,value
+test slates with a positive,"17,297"
+user groups where LightGBM beats the bar / popularity (interval above zero),17 / 19 of 19
+user groups where the attention ranker beats LightGBM,0
+"NDCG@10, history touches / does not touch a candidate",0.4996 / 0.3909
+"NDCG@10, no clicks in 7 days / 50 or more",0.3996 / 0.4135
+"positives in the top 10, ordered before / clicked before / nothing in history",99% / 98% / 45%
+"positives in the top 10, warm / cold",65% / 14%
+failed slates (no positive in the top 10),26.9%
+most common failure cause,history touches no candidate (44%)
+failed slates where the bar and popularity also fail,81%
+top two feature groups (share of within-slate contribution),"H7 standing within the slate 44%, H5 popularity by type 26%"
+top feature group among cold items,H7 standing within the slate 36%
+purchases of items ordered before,6.0%
+"of those, last order under the cut-off / median age (days)",22.3% / 57.8
+NDCG@10 change with every route but H8 closed,"-0.0204 [-0.0224, -0.0185]"
+"out-of-fold ratio, raw / against 0.8 x (N - 1)",1.42 / 1.01
+NDCG@10 change with test counts on the training scale,"-0.0001 [-0.0004, +0.0002]"
+policy: popularity order on slates the history does not touch (NDCG@10 change on the slates it changes),"-0.0360 [-0.0396, -0.0326], 71% of slates"
+policy: popularity order for users with no clicks in 7 days (NDCG@10 change on the slates it changes),"-0.0467 [-0.0549, -0.0391], 16% of slates"
+"policy: buy again, past orders and open carts moved to the top (NDCG@10 change on the slates it changes)","-0.0061 [-0.0098, -0.0022], 17% of slates"
+slates whose positives are all cold / their share of the shortfall,15% / 23%

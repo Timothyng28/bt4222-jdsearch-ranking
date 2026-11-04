@@ -1,0 +1,39 @@
+{
+  "windows_days": {
+    "CLICK": 7,
+    "CART": 90,
+    "ORD": 365,
+    "FLW": 89
+  },
+  "rule": "first day the daily event rate drops below 5% of the previous month's (p99.9 age if no cliff), checked against the step-1 plot",
+  "evidence": {
+    "CLICK": {
+      "events": 8298894.0,
+      "p99.9 age": 6.8853,
+      "max age": 13.1453,
+      "cliff (day)": 7.0,
+      "older than window": 0.0
+    },
+    "CART": {
+      "events": 11526504.0,
+      "p99.9 age": 89.459,
+      "max age": 635.2899,
+      "cliff (day)": 90.0,
+      "older than window": 0.0001
+    },
+    "ORD": {
+      "events": 6817283.0,
+      "p99.9 age": 363.9951,
+      "max age": 364.9865,
+      "cliff (day)": 365.0,
+      "older than window": 0.0
+    },
+    "FLW": {
+      "events": 24579.0,
+      "p99.9 age": 89.3711,
+      "max age": 89.9866,
+      "cliff (day)": 89.0,
+      "older than window": 0.0028
+    }
+  }
+}
