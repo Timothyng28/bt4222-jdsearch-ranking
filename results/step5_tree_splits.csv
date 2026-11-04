@@ -1,0 +1,16 @@
+feature,group,splits,share of split gain,cut-points with most gain,missing values go
+s_pop_click_pct,H7 standing within the slate,2074,0.5405935429930233,"0.8, 0.87, 0.86, 0.83",never missing
+s_shop_share,H7 standing within the slate,2693,0.055409427460851195,"0.01, 0.02, 0.03, 0.04",with the smaller values
+i_pop_cart,H5 popularity by type,1182,0.04456432273149471,"0, 4.5, 5.5, 9.5",never missing
+ui_item_days_click,H3 the item itself,639,0.02581012662398946,"0, 0.66, 0.68, 0.55",with the smaller values
+ui_item_days_cart,H3 the item itself,399,0.01047167743542318,"0, 86.62, 0.46, 0.88",with the smaller values
+ui_days_shop_click,H2 where a match comes from,625,0.00977990402288623,"0, 4.59, 0.15, 5.74",with the larger values
+ui_item_days_order,H3 the item itself,383,0.007375052325585552,"0, 6.24, 312.75, 23.68",with the smaller values
+ui_days_cate4_click,H2 where a match comes from,828,0.006821314227446331,"0, 0.01, 6.01, 0.71",with the larger values
+ui_days_shop_cart,H2 where a match comes from,514,0.0067649908680858534,"0, 87.89, 86.12, 79.44",with the smaller values
+ui_days_brand_click,H2 where a match comes from,523,0.0031036207532390684,"0, 5.99, 1.08, 0.01",with the smaller values
+ui_days_shop_order,H2 where a match comes from,244,0.002776021967035076,"0, 350.95, 362.18, 353.93",with the smaller values
+ui_days_brand_cart,H2 where a match comes from,426,0.002057413244935432,"0, 81.4, 0.01, 80.16",with the larger values
+ui_days_cate4_cart,H2 where a match comes from,423,0.001740579209096575,"0, 38.98, 82.36, 50.92",with the larger values
+ui_days_brand_order,H2 where a match comes from,221,0.00073960062393541,"0, 358.32, 0.36, 343.99",with the larger values
+ui_days_cate4_order,H2 where a match comes from,216,0.000658662510192688,"230.63, 0, 313.39, 40.14",with the larger values

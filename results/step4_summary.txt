@@ -1,0 +1,19 @@
+Feature groups kept by the ablation: H2 where a match comes from, H3 the item itself, H5 popularity by type, H6 item conversion rate, H7 standing within the slate, H8 name overlap by source (25 of 35 features). Dropped: H1 activity inside its window, H4 query as a key into history.
+
+On test users, NDCG@10 is 0.3423 for step-3 popularity, 0.4071 for the step-3 interim LightGBM (the bar), 0.4220 for the step-4 LightGBM, 0.4177 for the attention ranker and 0.4224 for the blend.
+
+The model with the best validation NDCG@10, Blend (w = 0.2), improves on popularity by +0.0802 NDCG@10 and reaches purchase Recall@10 0.6773 (popularity 0.5979).
+
+Against the interim bar, Blend (w = 0.2) differs by +0.0153 NDCG@10 (95% +0.0129 to +0.0175, 17,297 slates). The interval is above zero, so it clears the bar.
+
+Cold items: Blend (w = 0.2) reaches NDCG@10 0.2396 on cold candidates against 0.4988 on warm ones (step-3 popularity 0.1213 and 0.4117).
+
+Within step 4 on test, the blend minus LightGBM alone is +0.0004 NDCG@10 (95% -0.0001 to +0.0010), so the attention share adds nothing measurable. LightGBM minus the attention ranker is +0.0043 NDCG@10 (95% +0.0024 to +0.0064).
+
+Of the step-4 LightGBM's gain over the bar, the training settings alone (step-4 settings on the bar's 16 features, minus the bar) give +0.0012 NDCG@10 (95% +0.0002 to +0.0024), and the kept feature groups (step-4 LightGBM minus that model) give +0.0137 NDCG@10 (95% +0.0113 to +0.0158).
+
+Train vs test NDCG@10 for Blend (w = 0.2): 0.4385 vs 0.4224.
+
+History design on validation: split streams minus pooled stream +0.0003 NDCG@10 (95% -0.0010 to +0.0016); split minus no history +0.0002 (95% -0.0012 to +0.0016).
+
+Exploratory pooled popularity changed validation NDCG@10 by -0.0007; it is not part of the final model.
