@@ -11,7 +11,6 @@ BT4222 Group 5. We re-rank the candidates shown for each JD.com search query so 
 | `step3_baselines.ipynb` | Fixes the evaluation protocol, scores random, popularity, the reference model (as published and with each fault fixed) and the interim features with LightGBM, which sets the bar |
 | `step4_advanced_models.ipynb` | Trains LightGBM LambdaRank with a feature-group ablation and a short/long-term attention ranker, blends them and scores the test users once |
 | `step5_diagnostics.ipynb` | Explains where the final model wins and fails by user and item, what drives it (SHAP), two leak checks and three business ideas tested on the test slates |
-| `jd_eval.py` | The shared evaluation code (NDCG@5/10, HR@10, purchase recall@10, bootstrap intervals). Step 3 writes it to Drive and steps 4 and 5 import it from there, so this copy is for reading only |
 
 Every notebook is saved with its outputs, and key results sit under a red RESULT banner.
 
