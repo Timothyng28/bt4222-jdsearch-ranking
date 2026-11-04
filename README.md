@@ -2,13 +2,6 @@
 
 BT4222 Group 5. We re-rank the candidates shown for each JD.com search query so that the items a user clicks, carts or buys move to the top, using the [JDsearch dataset](https://github.com/rucliujn/JDsearch). The previous team's hybrid NCF model ([bt4222-team3-jdsearch](https://github.com/myathetchai/bt4222-team3-jdsearch)) is our reference baseline.
 
-| Member | Notebook |
-|---|---|
-| Anderson Djumin, Hsu Stanley | Step 1, step 2 |
-| Rohan Chintakindi | Step 3 |
-| Wang Xuxin | Step 4 |
-| Timothy Ng | Step 5 |
-
 ## Files
 
 | File | What it does |
