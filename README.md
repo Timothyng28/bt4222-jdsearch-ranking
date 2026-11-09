@@ -11,6 +11,7 @@ BT4222 Group 5. We re-rank the candidates shown for each JD.com search query so 
 | `step3_baselines.ipynb` | Fixes the evaluation protocol, scores random, popularity, the reference model (as published and with each fault fixed) and the interim features with LightGBM, which sets the bar |
 | `step4_advanced_models.ipynb` | Trains LightGBM LambdaRank with a feature-group ablation and a short/long-term attention ranker, blends them and scores the test users once |
 | `step5_diagnostics.ipynb` | Explains where the final model wins and fails by user and item, what drives it (SHAP), two leak checks and three business ideas tested on the test slates |
+| `artifacts/` | Small intermediates from our run. `split_users.parquet` is the train, validation and test user split, `folds.parquet` the five folds over training users and `user_features.parquet` the user features. `step4/` holds the final LightGBM model (`lgbm_final.txt`, with its feature list in `lgbm_final.txt.json`) and its scores on every test impression (`test_scores.parquet`) |
 | `results/` | Copies of the small outputs from our run, namely the results tables of steps 3 to 5, the step-4 summary and the feature definitions (`feature_dictionary.csv`, `model_features.json`, `history_windows.json`) |
 
 Every notebook is saved with its outputs, and key results sit under a red RESULT banner.
@@ -25,7 +26,7 @@ Everything else is produced by the notebooks. They write to a `processed/` folde
 * `processed/artifacts/` holds the features, split, folds and feature dictionary from step 2, the shared evaluation code `jd_eval.py` from step 3, and the saved step-4 models and scores.
 * `processed/results/` holds every results table (`step3_results.csv`, `step4_results.csv`, `step5_*.csv`), the per-slate test metrics and the figures.
 
-The small tables and the feature definitions from our run are also in `results/` in this repo. The parquet files and saved models are hundreds of MB, so they are rebuilt by running the notebooks.
+The small tables and the feature definitions from our run are also in `results/` in this repo, and the small intermediates are in `artifacts/`. The cleaned parquet files, the full feature table and the other saved models are too large for GitHub (up to 700 MB a file), so they are in our [Drive folder](https://drive.google.com/drive/folders/1C0CFkUwmTXPbF397i7y7Evba6t1PiDU4), laid out like `processed/`. Running the notebooks rebuilds all of them.
 
 ## How to run
 
